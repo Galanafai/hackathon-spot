@@ -52,6 +52,23 @@ def main():
         capture_image()
         time.sleep(3)
 
+        while(1):
+            move_io = input()
+            if(move_io == "w"):
+                spot.move_by_velocity_control(v_x=0.3, v_y=0, v_rot=0, cmd_duration=1)
+                time.sleep(3)
+            if(move_io == "s"):
+                spot.move_by_velocity_control(v_x=-0.3, v_y=0, v_rot=0, cmd_duration=1)
+                time.sleep(3)
+            if(move_io == "a"): 
+                spot.move_by_velocity_control(v_x=0, v_y=0.3, v_rot=0, cmd_duration=1)
+                time.sleep(3)
+            if(move_io == "d"):  
+                spot.move_by_velocity_control(v_x=0, v_y=-0.3, v_rot=0, cmd_duration=1)
+                time.sleep(3)
+            
+            if(move_io == "stop"):
+                break
 
 if __name__ == '__main__':
     main()
